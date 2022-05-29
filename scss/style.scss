@@ -2,6 +2,7 @@
 /*Imports*/
 @import "utilities/variables";
 
+
 /*Reset y propiedades generales*/
 * {
     margin: 0;
@@ -233,48 +234,22 @@ main{
 
 /*propiedades del grid contacto*/
 
-.grid__contacto {
-    display: grid;
-    height: auto;
-
-
-    grid-template-areas: "header"
-                        "titulo"
-                        "main__contacto"
-                        ;
-                       
-    grid-template-columns: 100%;
-    grid-template-rows: 0rem 0rem 100vh ; 
-    background-color: transparent;
-}
-
-/*propiedades contacto*/
-
-
-
-.fondo__contacto{   
-    background-color: $bg-color__contacto;
-    .titulo__pagina-contacto{
-        h1{
-            color:$color__contacto;
-            
-        }
-    } 
-    .contacto__contacto {
-        width:50%;
-        text-align: justify;
-        line-height: 2.3rem;
-        padding:1rem;
-        color:$color__contacto;
-        display:flex;
-        justify-content: center;
-            
-     }
+.grid__contacto {  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto auto;
+    column-gap: 2rem;
     
-     .contacto__formulario {
-        width:50%;
-        padding:1rem;
-        
+    grid-template-areas:
+      "header header"
+      "titulo titulo"
+      "contacto__contacto contacto__formulario"
+      "footer footer";
+      .contacto__formulario {
+        justify-self: start;
+        align-self: center;
+        grid-area: contacto__formulario;
+        width:70%;
+        padding-bottom:50px;
         form{
             div{
                 h2{
@@ -294,7 +269,6 @@ main{
                 border:none;
                 font-weight: bold;
                 width:100%;
-                margin-bottom:50px;
                 color:$color__button;
                 
             }
@@ -304,71 +278,37 @@ main{
             }
         }
         
-           
-    }
+      }
+      
+      .contacto__contacto {
+        justify-self: center;
+        align-self: center;
+        grid-area: contacto__contacto;
+        text-align: justify;
+        color:$color__contacto;
+        
+      }
+  }
+  
+  
+.fondo__contacto{   
+    background-color: $bg-color__contacto;
+    .titulo__pagina-contacto{
+        h1{
+            color:$color__contacto;
+            
+        }
+    } 
     
-    .main__contacto{
-        grid-area:main__contacto;
-        width:70%;
-        height:fit-content;
-        display:flex;
-        flex-wrap:wrap;
-        justify-content: center;
-        align-items: center;
-        margin:auto;
-        background:transparent;
-       .contacto__contacto{
-           .contacto__contacto-linea{
-                img{
-                margin-right:10px;
-            }
-           }
-       }
+    
+         
+    
+      
      
        
     }
     
     
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*propiedades del footer*/
@@ -404,7 +344,7 @@ footer {
 }
 
 
-
+@import "utilities/medias";
 
 
 
