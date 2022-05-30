@@ -156,7 +156,7 @@ main {
   justify-content: center;
   margin-bottom: 30px; }
   .container__carrousel .carousel {
-    width: 100%;
+    width: 80%;
     margin: auto; }
 
 /*propiedades del grid contacto*/
